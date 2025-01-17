@@ -72,8 +72,14 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
     <option value="galaxy">Galaxy</option>
     <option value="gitd">Glow-in-the-dark</option>
     <option value="rabs">Red and Blue Silk</option>
+    <option value="metal">Green Metal</option>
 </select>
 <p class="answer" style="display:none;">q1b</p>
+<select>
+    <option value="3">Monday in 3 weeks</option>
+    <option value="2">Monday in 2 weeks</option>
+    <option value="1">Monday in 1 week</option>
+</select>
 <br><input type="Submit" Value="Submit">
 </form>
 <script>
@@ -81,6 +87,19 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
 document.getElementById("orderForm").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent the form from submitting the default way
 
+var delivery = document.GetElementById("deliveryweeks")
+if (localStorage.getItem("productselected") == charmander) do {}
+
+price = price + (3 - delivery)
+
+if (color == "rabs") do {price++; price++; price++};
+if (color == "galaxy") do {price++; price++; price++};
+if (color == "gitd") do {price++; price++; price++};
+if (color == "metal") do {price++; price++; price++};
+if (color == "pgabs") do {price++; price++; price++};
+
+document.GetElementById("pricedisplay").textContent = price
+    
   // Get the form data
   const orderData = {
     name: document.getElementById('q1').value,
