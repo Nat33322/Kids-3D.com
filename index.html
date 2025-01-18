@@ -1,218 +1,240 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kids-3D™</title>
-<link rel="shortcut icon" type="image/x-icon" href="Kids-3D-logo.png" />
-<link rel="stylesheet" href="overlaytxt.css">
-</head>
-<style>
-.product {
-  display: flex;
-  flex-direction: column; /* Stack the image and text vertically */
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  width: 250px;
-  height: 275px;
-  border-radius: 10%;
-  background-color: #ff5c00; /* Button background color */
-  border: none; /* Remove default border */
-  padding: 0; /* Remove any default padding */
-  box-sizing: border-box; /* Make sure padding doesn't affect the layout */
-}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kids-3D™</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Kids-3D-logo.png" />
+    <link rel="stylesheet" href="overlaytxt.css">
+    <link rel="stylesheet" heref="indexescss.css">
+  </head>
+  <style>
+    .product {
+      display: flex;
+      flex-direction: column; /* Stack the image and text vertically */
+      justify-content: center; /* Center vertically */
+      align-items: center; /* Center horizontally */
+      width: 250px;
+      height: 275px;
+      border-radius: 10%;
+      background-color: #ff5c00; /* Button background color */
+      border: none; /* Remove default border */
+      padding: 0; /* Remove any default padding */
+      box-sizing: border-box; /* Make sure padding doesn't affect the layout */
+    }
 
-.product:hover {
-  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.5);
-}
+    .product:hover {
+      box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.5);
+    }
 
-#content {
-  width: 100%; /* Make it take up the full width of the button */
-  height: 100%; /* Make it take up the full height of the button */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    #content {
+      width: 100%; /* Make it take up the full width of the button */
+      height: 100%; /* Make it take up the full height of the button */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-#content img {
-  width: 100%; /* Make image take up the full width of the container */
-  height: 100%; /* Make image fill the height as well */
-  object-fit: cover; /* Ensures image covers the area without distortion */
-  border-radius: 10%; /* Match button's rounded corners */
-}
+    #content img {
+      width: 100%; /* Make image take up the full width of the container */
+      height: 100%; /* Make image fill the height as well */
+      object-fit: cover; /* Ensures image covers the area without distortion */
+      border-radius: 10%; /* Match button's rounded corners */
+    }
 
-.text-overlay {
-  text-align: center; /* Center text */
-  color: #ffffff;
-  font-size: 18px; /* Adjust font size */
-  padding: 10px;
-  background-color: rgba(255, 92, 0, 0.8); /* Semi-transparent background */
-  border-radius: 5px;
-  margin-top: 10px; /* Add some space between the image and the text */
-}
+    .text-overlay {
+      text-align: center; /* Center text */
+      color: #ffffff;
+      font-size: 18px; /* Adjust font size */
+      padding: 10px;
+      background-color: rgba(255, 92, 0, 0.8); /* Semi-transparent background */
+      border-radius: 5px;
+      margin-top: 10px; /* Add some space between the image and the text */
+    }
 
-.bottom-box {
-  text-align: left; /* Center text */
-  color: green; /* White text */
-  font-size: 15px; /* Adjust font size */
-  background-color: rgb(0, 0, 0); /* Semi-transparent background */
-  border-radius: 5px;
-  margin-top: auto;
-  position: absolute;
-  width: 100%;
-  top: 100%;
-}
+    .bottom-box {
+      text-align: left; /* Center text */
+      color: green; /* White text */
+      font-size: 15px; /* Adjust font size */
+      background-color: rgb(0, 0, 0); /* Semi-transparent background */
+      border-radius: 5px;
+      margin-top: auto;
+      position: absolute;
+      width: 100%;
+      top: 100%;
+    }
 
-#search-bar {
-  margin: 20px 0;
-  width: 300px;
-  padding: 10px;
-  font-size: 16px;
-}
+    #search-bar {
+      margin: 20px 0;
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+    }
 
-.hidden {
-  display: none;
-}
+    .hidden {
+      display: none;
+    }
 
-#product-container {
-  display: flex;
-  gap: 20px;
-  overflow-x: scroll; /* Allow horizontal scrolling for the product list */
-  white-space: nowrap; /* Prevent content from wrapping */
-  padding: 20px;
-  background-color: rgb(245, 239, 232);
-  border-radius: 25px;
-}
+    #product-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: scroll; /* Allow horizontal scrolling for the product list */
+      white-space: nowrap; /* Prevent content from wrapping */
+      padding: 20px;
+      background-color: rgb(245, 239, 232);
+      border-radius: 25px;
+    }
   
-body {
-  background-color: rgb(150, 150, 150);
-}
-</style>
-<body>
-<div style="position: fixed; background-color: #4169e1; text-color: grey; width: 100%; left: 0px; top: 0px; z-index: 1;">
-<img src="Kids-3D-logo.png" alt="Logo" style="width: 50px; height: 50px; padding: 20px; vertical-align: center;">™ Kids-3D™
-  <input
-    type="search"
-    id="search-bar"
-    placeholder="Search for a product..."
-    style="border-radius: 50px; top: 50%; right: 50% background-color: #f2f0ef"
-  />
-  <br><div style="position: fixed; background-color: rgb(211, 211, 211); text-color: grey; overflow-x: scroll; white-space: nowrap; width: 100%">
-    <a href="index.html">Home</a> <a href="about-us.html">About Us</a>
-  </div>
-</div>
-<br><br><br><br><br><br><br><br><br><br><div id="product-container">
-<a onclick="charmanderselected()">
-  <button id="charmander" class="product">
-    <div class="image-container" id="content">
-      <img src="Charmander.png" alt="Charmander" hover="Charmander">
-      <div class="text-overlay">Charmander $0.25</div>
+    body {
+      background-color: rgb(150, 150, 150);
+    }
+  </style>
+  <body>
+    <div style="position: fixed; background-color: #4169e1; text-color: grey; width: 100%; left: 0px; top: 0px; z-index: 1;">
+      <img
+        src="Kids-3D-logo.png"
+        alt="Logo"
+        style="width: 50px;
+        height: 50px;
+        padding: 20px;
+        vertical-align: center;
+        "
+      >™ Kids-3D™
+      <input
+        type="search"
+        id="search-bar"
+        placeholder="Search for a product..."
+        style="
+          border-radius: 50px;
+          top: 50%;
+          right: 50%
+          background-color: #f2f0ef"
+      >
+      <br><div
+        style="
+          position: fixed;
+          background-color: rgb(211, 211, 211);
+          text-color: grey;
+          overflow-x: scroll;
+          white-space: nowrap;
+          width: 100%"
+      >
+        <a href="index.html">Home</a> <a href="about-us.html">About Us</a>
+      </div>
     </div>
-  </button>
-</a>
-<a onclick="impossiblespiralselected()">
-  <button id="impossible-spiral" class="product">
-    <div class="image-container" id="content">
-      <img src="Placeholder.png" alt="Sprial cone" hover="Impossible Spiral">
-      <div class="text-overlay">Impossible Spiral $3</div>
+    <br><br><br><br><br><br><br><br><br><br><div id="product-container">
+      <a onclick="charmanderselected()">
+        <button id="charmander" class="product">
+          <div class="image-container" id="content">
+            <img src="Charmander.png" alt="Charmander" hover="Charmander">
+            <div class="text-overlay">Charmander $0.25</div>
+          </div>
+        </button>
+      </a>
+      <a onclick="impossiblespiralselected()">
+        <button id="impossible-spiral" class="product">
+          <div class="image-container" id="content">
+            <img src="Placeholder.png" alt="Sprial cone" hover="Impossible Spiral">
+            <div class="text-overlay">Impossible Spiral $3</div>
+          </div>
+        </button>
+      </a>
+      <a onclick="dragonselected()">
+        <button id="dragon" class="product">
+          <div class="image-container" id="content">
+            <img src="Placeholder.png" alt="Dragon" hover="Dragon">
+            <div class="text-overlay">Dragon $5</div>
+          </div>
+        </button>
+      </a>
+      <a onclick="spinningringsselected()">
+        <button id="spinning-rings" class="product">
+          <div class="image-container" id="content">
+            <img src="Placeholder.png" alt="Spinning Rings" hover="Spinning Rings">
+            <div class="text-overlay">Spinning Rings $3</div>
+          </div>
+        </button>
+      </a>
+      <a onclick="infinitycubeselected()">
+        <button id="infinity-cube" class="product">
+          <div class="image-container" id="content">
+            <img src="Placeholder.png" alt="Infinity Cube" hover="Infinity Cube">
+            <div class="text-overlay">Infinity Cube $3</div>
+          </div>
+        </button>
+      </a>
+      <a onclick="elephantselected()">
+        <button id="elephant" class="product">
+          <div class="image-container" id="content">
+            <img src="Placeholder.png" alt="Elephant" hover="Elephant">
+            <div class="text-overlay">Elephant $35</div>
+          </div>
+        </button>
+      </a>
     </div>
-  </button>
-</a>
-<a onclick="dragonselected()">
-  <button id="dragon" class="product">
-    <div class="image-container" id="content">
-      <img src="Placeholder.png" alt="Dragon" hover="Dragon">
-      <div class="text-overlay">Dragon $5</div>
-    </div>
-  </button>
-</a>
-<a onclick="spinningringsselected()">
-  <button id="spinning-rings" class="product">
-    <div class="image-container" id="content">
-      <img src="Placeholder.png" alt="Spinning Rings" hover="Spinning Rings">
-      <div class="text-overlay">Spinning Rings $3</div>
-    </div>
-  </button>
-</a>
-<a onclick="infinitycubeselected()">
-  <button id="infinity-cube" class="product">
-    <div class="image-container" id="content">
-      <img src="Placeholder.png" alt="Infinity Cube" hover="Infinity Cube">
-      <div class="text-overlay">Infinity Cube $3</div>
-    </div>
-  </button>
-</a>
-<a onclick="elephantselected()">
-  <button id="elephant" class="product">
-    <div class="image-container" id="content">
-      <img src="Placeholder.png" alt="Elephant" hover="Elephant">
-      <div class="text-overlay">Elephant $35</div>
-    </div>
-  </button>
-</a>
-</div>
 
-<script>
-function charmanderselected() {
-  localStorage.setItem("productselected", "Charmander")
-  localStorage.setItem("productextrainfo", 'ALERT: THIS PRODUCT WILL GO OFFSALE SOON!!! (like a month maybe)')
-  window.location.href = "Products/Purchase"
-}
-function impossiblespiralselected() {
-  localStorage.setItem("productselected", "Impossible Spiral")
-  localStorage.setItem("productextrainfo", "This spiral is a mezmorizing fidget.")
-  window.location.href = "Products/Purchase.html"
-}
-function dragonselected() {
-  localStorage.setItem("productselected", "Dragon")
-  localStorage.setItem("productextrainfo", "This is a very fun articulated dragon.")
-  window.location.href = "Products/Purchase.html"
-}
-function spinningringsselected() {
-  localStorage.setItem("productselected", "Spinning Rings")
-  localStorage.setItem("productextrainfo", "This ring with rings inside are very fun to play with. (the fidget will come out not turning smoothly but the more you spin it it will turn smoother.)")
-  window.location.href = "Products/Purchase.html"
-}
-function infinitycubeselected() {
-  localStorage.setItem("productselected", "Infinity Cube")
-  localStorage.setItem("productextrainfo", "This infinity cube is super fun.")
-  window.location.href = "Products/Purchase.html"
-}
-function elephantselected() {
-  localStorage.setItem("productselected", "Elephant")
-  localStorage.setItem("productextrainfo", "This elephants joints are fully articulated.")
-  window.location.href = "Products/Purchase.html"
-}
-</script>
-<script>
-    // Grab the search bar and products
-    const searchBar = document.getElementById('search-bar');
-    const products = document.querySelectorAll('#product-container .product');
+    <script>
+      function charmanderselected() {
+        localStorage.setItem("productselected", "Charmander")
+        localStorage.setItem("productextrainfo", 'ALERT: THIS PRODUCT WILL GO OFFSALE SOON!!! (like a month maybe)')
+        window.location.href = "Products/Purchase"
+      }
+      function impossiblespiralselected() {
+        localStorage.setItem("productselected", "Impossible Spiral")
+        localStorage.setItem("productextrainfo", "This spiral is a mezmorizing fidget.")
+        window.location.href = "Products/Purchase.html"
+      }
+      function dragonselected() {
+        localStorage.setItem("productselected", "Dragon")
+        localStorage.setItem("productextrainfo", "This is a very fun articulated dragon.")
+        window.location.href = "Products/Purchase.html"
+      }
+      function spinningringsselected() {
+        localStorage.setItem("productselected", "Spinning Rings")
+        localStorage.setItem("productextrainfo", "This ring with rings inside are very fun to play with. (the fidget will come out not turning smoothly but the more you spin it it will turn smoother.)")
+        window.location.href = "Products/Purchase.html"
+      }
+      function infinitycubeselected() {
+        localStorage.setItem("productselected", "Infinity Cube")
+        localStorage.setItem("productextrainfo", "This infinity cube is super fun.")
+        window.location.href = "Products/Purchase.html"
+      }
+      function elephantselected() {
+        localStorage.setItem("productselected", "Elephant")
+        localStorage.setItem("productextrainfo", "This elephants joints are fully articulated.")
+        window.location.href = "Products/Purchase.html"
+      }
+    </script>
+    <script>
+      // Grab the search bar and products
+      const searchBar = document.getElementById('search-bar');
+      const products = document.querySelectorAll('#product-container .product');
 
-    // Add an input listener to filter products
-    searchBar.addEventListener('input', (e) => {
-      const searchText = e.target.value.toLowerCase();
+      // Add an input listener to filter products
+      searchBar.addEventListener('input', (e) => {
+        const searchText = e.target.value.toLowerCase();
 
-      products.forEach((product) => {
-        const productName = product.querySelector('.text-overlay').innerText.toLowerCase();
-
-        // Check if product name matches search text
-        if (productName.includes(searchText)) {
-          product.classList.remove('hidden'); // Show product
-        } else {
-          product.classList.add('hidden'); // Hide product
-        }
+        products.forEach((product) => {
+          const productName = product.querySelector('.text-overlay').innerText.toLowerCase();
+  
+          // Check if product name matches search text
+          if (productName.includes(searchText)) {
+            product.classList.remove('hidden'); // Show product
+          } else {
+            product.classList.add('hidden'); // Hide product
+          }
+        });
       });
-    });
-  </script>
-<div class="bottom-box">
-  <h3 style="text-align: center;">Extra stuff</h3>
-  <ul>
-    <li><a href="https://docs.google.com/forms/d/1TCJfudEbrAHJ5CreiEG-nOKQk4aJjmuoz8W2c_fvNLY/">Product Suggestions</a></li>
-    <li><br><a href="about-us.html">About Us</a></li>
-    <li><br><a href="index.html">Home</a></li>
-  </ul>
-</body>
+    </script>
+    <div class="bottom-box">
+      <h3 style="text-align: center;">Extra stuff</h3>
+      <ul>
+        <li><a href="https://docs.google.com/forms/d/1TCJfudEbrAHJ5CreiEG-nOKQk4aJjmuoz8W2c_fvNLY/">Product Suggestions</a></li>
+        <li><br><a href="about-us.html">About Us</a></li>
+        <li><br><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </body>
 </html>
 
 
