@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terms and Conditions</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Kids-3D-logo.png" />
+  </head>
+    #content {
+      width: 100%; /* Make it take up the full width of the button */
+      height: 100%; /* Make it take up the full height of the button */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
+    #content img {
+      width: 100%; /* Make image take up the full width of the container */
+      height: 100%; /* Make image fill the height as well */
+      object-fit: cover; /* Ensures image covers the area without distortion */
+      border-radius: 10%; /* Match button's rounded corners */
+    }
+
+    .text-overlay {
+      text-align: center; /* Center text */
+      color: #ffffff;
+      font-size: 18px; /* Adjust font size */
+      padding: 10px;
+      background-color: rgba(255, 92, 0, 0.8); /* Semi-transparent background */
+      border-radius: 5px;
+      margin-top: 10px; /* Add some space between the image and the text */
+    }
+
+    .bottom-box {
+      text-align: left; /* Center text */
+      color: green; /* White text */
+      font-size: 15px; /* Adjust font size */
+      background-color: rgb(0, 0, 0); /* Semi-transparent background */
+      border-radius: 5px;
+      margin-top: auto;
+      position: absolute;
+      width: 100%;
+      top: 100%;
+    }
+
+    #search-bar {
+      margin: 20px 0;
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .hidden {
+      display: none;
+    }
+    body {
+      background-color: #efefef;
+    }
+  </style>
+  <body>
+    <div style="position: fixed; background-color: #4169e1; text-color: grey; width: 100%; left: 0px; top: 0px; z-index: 1;">
+      <img
+        src="Kids-3D-logo.png"
+        alt="Logo"
+        style="width: 50px;
+        height: 50px;
+        padding: 20px;
+        vertical-align: center;
+        "
+      >™ Kids-3D™
+      <input
+        type="search"
+        id="search-bar"
+        placeholder="Search for a product..."
+        style="
+          border-radius: 50px;
+          top: 50%;
+          right: 50%
+          background-color: #f2f0ef"
+      >
+      <br><div
+        style="
+          position: fixed;
+          background-color: rgb(211, 211, 211);
+          text-color: grey;
+          white-space: nowrap;
+          width: 100%"
+      >
+        <a href="index.html">Home</a> | <a href="about-us.html">About Us</a>
+      </div>
+    </div>
+    <div style="position: relative; top: 70%;">hi</div>
+    <script>
+      // Grab the search bar and products
+      const searchBar = document.getElementById('search-bar');
+      const products = document.querySelectorAll('#product-container .product');
+
+      // Add an input listener to filter products
+      searchBar.addEventListener('input', (e) => {
+        const searchText = e.target.value.toLowerCase();
+
+        products.forEach((product) => {
+          const productName = product.querySelector('.text-overlay').innerText.toLowerCase();
+  
+          // Check if product name matches search text
+          if (productName.includes(searchText)) {
+            product.classList.remove('hidden'); // Show product
+          } else {
+            product.classList.add('hidden'); // Hide product
+          }
+        });
+      });
+    </script>
+    <div class="bottom-box">
+      <h3 style="text-align: center;">Extra stuff</h3>
+      <ul>
+        <li><a href="https://docs.google.com/forms/d/1TCJfudEbrAHJ5CreiEG-nOKQk4aJjmuoz8W2c_fvNLY/">Product Suggestions</a></li>
+        <li><br><a href="about-us.html">About Us</a></li>
+        <li><br><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
