@@ -91,27 +91,6 @@
       </div>
     </div>
     <div style="position: absolute; background-color: white; top: 50%; left: 10%; color: black; border-radius: 20px; width: 50px; height: 50px;">hi</div>
-    <script>
-      // Grab the search bar and products
-      const searchBar = document.getElementById('search-bar');
-      const products = document.querySelectorAll('#product-container .product');
-
-      // Add an input listener to filter products
-      searchBar.addEventListener('input', (e) => {
-        const searchText = e.target.value.toLowerCase();
-
-        products.forEach((product) => {
-          const productName = product.querySelector('.text-overlay').innerText.toLowerCase();
-  
-          // Check if product name matches search text
-          if (productName.includes(searchText)) {
-            product.classList.remove('hidden'); // Show product
-          } else {
-            product.classList.add('hidden'); // Hide product
-          }
-        });
-      });
-    </script>
     <div class="bottom-box">
       <h3 style="text-align: center;">Extra stuff</h3>
       <ul>
