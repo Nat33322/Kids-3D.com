@@ -59,7 +59,7 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
 <label for="q1">Firstname/Last Initial</label>
 <br><label for="q2">Color: </label>
 <select id="q2">
-    Standards:
+    <text>Standards:</text>
     <option value="blue">Blue</option>
     <option value="red">Red</option>
     <option value="green">Green</option>
@@ -68,37 +68,49 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
     <option value="purple">Purple</option>
     <option value="orange">Orange</option>
     <option value="grey">Grey</option>
-    Specials (Cost is higher):
+    <text>Specials (Cost is higher):</text>
     <option value="galaxy">Galaxy</option>
     <option value="gitd">Glow-in-the-dark</option>
     <option value="rabs">Red and Blue Silk</option>
     <option value="metal">Green Metal</option>
 </select>
-<p class="answer" style="display:none;">q1b</p>
-<select>
-    <option value="3">Monday in 3 weeks</option>
-    <option value="2">Monday in 2 weeks</option>
-    <option value="1">Monday in 1 week</option>
-</select>
 <br><input type="Submit" Value="Submit">
 </form>
+<span id="pricedisplay"></span>
 <script>
 // Add the submit event listener
 document.getElementById("orderForm").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent the form from submitting the default way
 
 var delivery = document.GetElementById("deliveryweeks")
-if (localStorage.getItem("productselected") == charmander) do {}
+if (localStorage.getItem("productselected") == "Charmander") do {
+    price = 0.25
+    if (color == "rabs") or (color == "galaxy") or (color == "gitd") or (color == "metal") or (color == "pgabs") do {price += 0.25;};
+}
+    
+if (localStorage.getItem("productselected") == "Elephant") do {
+    price = 32
+    if (color == "rabs") or (color == "galaxy") or (color == "gitd") or (color == "metal") or (color == "pgabs") do {price++; price++; price++;};
+}
+    
+if (localStorage.getItem("productselected") == "Dragon") do {
+    price = 7
+    if (color == "rabs") or (color == "galaxy") or (color == "gitd") or (color == "metal") or (color == "pgabs") do {price++; price++; price++;};
+}
 
-price = price + (3 - delivery)
+if (localStorage.getItem("productselected") == "Infinity Cube") do {
+    price = 3
+    if (color == "rabs") or (color == "galaxy") or (color == "gitd") or (color == "metal") or (color == "pgabs") do {price++; price++;};
+}
 
-if (color == "rabs") do {price++; price++; price++};
-if (color == "galaxy") do {price++; price++; price++};
-if (color == "gitd") do {price++; price++; price++};
-if (color == "metal") do {price++; price++; price++};
-if (color == "pgabs") do {price++; price++; price++};
+if (localStorage.getItem("productselected") == "Spinning Rings") do {
+    price = 3
+    if (color == "rabs") or (color == "galaxy") or (color == "gitd") or (color == "metal") or (color == "pgabs") do {price++; price++;};
+}
 
-document.GetElementById("pricedisplay").textContent = price
+// if (color == "rabs") or (color == "galaxy") or (color == "gitd") or (color == "metal") or (color == "pgabs") do {price++; price++; price++};
+
+document.GetElementById("pricedisplay").textContent = ("total:"<br>"$"{price}<br>"Are you sure you want to send an order?"<br><button id="purchaseconfirm">"Confirm"</button>)
     
   // Get the form data
   const orderData = {
