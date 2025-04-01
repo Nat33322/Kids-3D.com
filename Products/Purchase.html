@@ -80,32 +80,32 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
 document.getElementById("orderForm").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent the form from submitting the default way
 var delivery = document.GetElementById("deliveryweeks")
-if (localStorage.getItem("productselected") == "Charmander") do {
+if (localStorage.getItem("productselected") == "Charmander") {
     price = 0.25
-    if ((color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs")) do {price += 0.25;}
+    if ((color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs")) {price += 0.25;}
 }
     
-if (localStorage.getItem("productselected") == "Elephant") do {
+if (localStorage.getItem("productselected") == "Elephant") {
     price = 32
-    if (color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs") do {price++; price++; price++;}
+    if (color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs") {price++; price++; price++;}
 }
     
-if (localStorage.getItem("productselected") == "Dragon") do {
+if (localStorage.getItem("productselected") == "Dragon") {
     price = 7
-    if (color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs") do {price++; price++; price++;}
+    if (color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs") {price++; price++; price++;}
 }
 
-if (localStorage.getItem("productselected") == "Infinity Cube") do {
+if (localStorage.getItem("productselected") == "Infinity Cube") {
     price = 3
-    if (color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs") do {price++; price++;}
+    if (color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs") {price++; price++;}
 }
 
-if (localStorage.getItem("productselected") == "Spinning Rings") do {
+if (localStorage.getItem("productselected") == "Spinning Rings") {
     price = 3
-    if (color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs") do {price++; price++;}
+    if (color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs") {price++; price++;}
 }
 
-// if (color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs") do {price++; price++; price++};
+// if (color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs") {price++; price++; price++};
 
 document.GetElementById("pricedisplay").textContent = ("total:"<br>"$"{price}<br>"Are you sure you want to send an order?"<br><button id="purchaseconfirm">"Confirm"</button>)
     
