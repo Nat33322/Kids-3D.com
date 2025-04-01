@@ -83,7 +83,7 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
 // Add the submit event listener
 document.getElementById("orderForm").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent the form from submitting the default way
-history.pushState(Purchase.html);
+history.pushState("Purchase.html");
 var delivery = document.GetElementById("deliveryweeks")
 if (localStorage.getItem("productselected") == "Charmander") do {
     price = 0.25
