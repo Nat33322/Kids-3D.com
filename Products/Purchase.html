@@ -107,7 +107,7 @@ if (localStorage.getItem("productselected") == "Spinning Rings") {
 
 // if ((color == "rabs") || (color == "galaxy") || (color == "gitd") || (color == "metal") || (color == "pgabs")) {price++; price++; price++};
 
-document.GetElementById("pricedisplay").textContent = ("total:"<br>"$"price<br>"Are you sure you want to send an order?"<br><button id="purchaseconfirm">"Confirm"</button>)
+document.GetElementById("pricedisplay").textContent = ("total:"<br>"$" + str(price) +<br>"Are you sure you want to send an order?"<br><button id="purchaseconfirm">"Confirm"</button>)
     
   // Get the form data
   const orderData = {
